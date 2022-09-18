@@ -1,0 +1,19 @@
+body{
+    text-align: justify;
+}
+a, a:active {
+    color: #6c757d;
+    text-decoration: inherit;
+    margin-right: 0.3rem;
+}
+a:hover{
+    color: #adb5bd;
+}
+h1{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+h2{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
