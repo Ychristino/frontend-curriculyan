@@ -27,7 +27,7 @@ function Curriculum(){
     const [abas, setAbas] = useState([{}]);
     
     useEffect(()=> {
-        axios.get("http://localhost:8080/curriculo/1")
+        axios.get("https://backend-curriculyan.herokuapp.com/curriculo")
             .then(resposta => {
                 setData(resposta.data);
                 setAbas([{

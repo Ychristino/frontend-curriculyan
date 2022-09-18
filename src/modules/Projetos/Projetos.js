@@ -17,7 +17,7 @@ function Projetos(){
     const [isLoading, setisLoading] = useState(true);
     
     useEffect(()=> {
-        axios.get("http://localhost:8080/projeto")
+        axios.get("https://backend-curriculyan.herokuapp.com/projeto")
             .then(resposta => {
                 setData(resposta.data);
                 setisLoading(false);
