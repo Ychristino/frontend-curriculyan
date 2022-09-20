@@ -12,8 +12,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import ArticleIcon from '@mui/icons-material/Article';
 import BuildIcon from '@mui/icons-material/Build';
 import ContactsIcon from '@mui/icons-material/Contacts';
-import { Fab } from '@mui/material';
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 
 function Manutencao(){
     const menus = [

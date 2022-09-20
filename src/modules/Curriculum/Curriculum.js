@@ -12,12 +12,10 @@ import Extras from './Informacoes/Extras';
 // Bootstrap Imports
 import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
 import Spinner from 'react-bootstrap/Spinner';
 
-import axios from 'axios';
+//Api
+import apiCurriculo from '../../api/ApiCurriculo';
 
 function Curriculum(){
     const [data, setData] = useState({});
@@ -27,8 +25,9 @@ function Curriculum(){
     const [abas, setAbas] = useState([{}]);
     
     useEffect(()=> {
-        axios.get("https://backend-curriculyan.herokuapp.com/curriculo/1")
+        apiCurriculo.get("curriculo/1")
             .then(resposta => {
+                //Backend aceita paginação... para isso apenas utilizar o formato: 'curriculo?page=0&size=2&sort=titulo,asc
                 setData(resposta.data);
                 setAbas([{
                     titulo:'Atividades Atuais',

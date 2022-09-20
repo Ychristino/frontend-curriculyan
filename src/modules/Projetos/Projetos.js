@@ -10,16 +10,19 @@ import Button from 'react-bootstrap/Button';
 import { Row } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 
-import axios from 'axios';
+//Api
+import apiCurriculo from '../../api/ApiCurriculo';
 
 function Projetos(){
     const [data, setData] = useState({});
     const [isLoading, setisLoading] = useState(true);
     
     useEffect(()=> {
-        axios.get("https://backend-curriculyan.herokuapp.com/projeto")
+        //Backend aceita paginação... para isso apenas utilizar o formato: 'projeto?page=0&size=2&sort=titulo,asc'
+        apiCurriculo.get("projeto")
             .then(resposta => {
-                setData(resposta.data);
+                console.log(resposta)
+                setData(resposta.data.content);
                 setisLoading(false);
             })
     }, [isLoading]);

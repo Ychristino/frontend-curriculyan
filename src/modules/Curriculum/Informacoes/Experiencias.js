@@ -1,16 +1,16 @@
 // React Imports
 import React from 'react';
-import { useState, useEffect } from 'react';
 
 
 // Modules Imports
-import MostraData from './MostraData';
-
+import MostraData from '../../../Filtros/MostraData';
+import OrdenaData from '../../../Filtros/OrdenaData';
 // Bootstrap Imports
 import Accordion from 'react-bootstrap/Accordion';
 
 function Experiencias(props){
-    console.log(props.experiencias)
+    const data = OrdenaData(props.experiencias, 'dataInicio', 'asc')
+
     return(
         <>
             <Accordion 
@@ -18,7 +18,7 @@ function Experiencias(props){
                 alwaysOpen
             >
 
-                {props.experiencias.map((experiencia, key)=>
+                {data.map((experiencia, key)=>
                     <Accordion.Item 
                         className='mb-2' 
                         eventKey={key} 

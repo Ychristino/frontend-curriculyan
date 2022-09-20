@@ -1,20 +1,21 @@
 // React Imports
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 
 
 // Modules Imports
 // Bootstrap Imports
-import Card from 'react-bootstrap/Card';
-import MostraData from './MostraData';
+import MostraData from '../../../Filtros/MostraData';
+import OrdenaData from '../../../Filtros/OrdenaData';
 
 function Formacoes(props){
-    console.log(props.formacoes)
+    const data = OrdenaData(props.formacoes, 'data', 'asc')
+
+
     return(
         <>
             <ListGroup variant="flush">
-            {props.formacoes.map((formacao, key)=>
+            {data.map((formacao, key)=>
                 <ListGroup.Item>
                     <h2>{(MostraData(formacao.data)) }</h2>
                     

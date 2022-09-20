@@ -7,6 +7,7 @@ import Menu from './modules/Menu';
 import Projetos from './modules/Projetos/Projetos';
 import Curriculum from './modules/Curriculum/Curriculum';
 import Manutencao from './modules/Logado/Manutencao';
+import Login from './modules/Logado/Login';
 
 // BOOTSTRAP IMPORTS
 import Row from 'react-bootstrap/Row';
@@ -15,6 +16,7 @@ import Col from 'react-bootstrap/Col';
 // CSS IMPORTS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 function App() {
   return (
     <>
@@ -51,6 +53,11 @@ function App() {
                   <Route 
                     path='/projetos' 
                     element={<Projetos />} 
+                  />
+
+                  <Route 
+                    path='/in' 
+                    element={<Login />} 
                   />
 
                   <Route 
