@@ -38,7 +38,7 @@ function App() {
         >
             {/* Inicio Conteúdo da página */}
             <Col lg={{span:8, offset: 2}} md={12}>
-              <Login />
+              {/* <Login /> */}
               {/* <AtualizaAtributos /> */}
               {/* <AtualizaCurriculo /> */}
               {/* <AtualizaExperiencia /> */}
