@@ -9,35 +9,18 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
-
 //Api
-import apiCurriculo from '../../api/ApiCurriculo';
-import axios from 'axios';
+import LoginService from '../../services/Logar';
 
 function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    let ret;
-    const data = {
-        'email':email, 
-        'senha':senha
-    }
-    const config =
-    {headers:{
-        'Authorization': '', 
-        'Content-Type':'application/json'
-      },
-    }
-
-    const logar = ()=> axios.post("http://localhost:8080/auth", data, config)
-        .then(resposta => {
-            ret = resposta
+    const logar = ()=> new LoginService().logar(email, senha)
+        .then(resposta=> {
+           console.log(resposta)
         })
-        .catch(e=> ret = e)
-    
-        console.log({'email':email, 'senha':senha})
-    console.log(ret)
+
     return(
         <Row className="align-middle">
             <Col md={{span:12, offset:1}}>

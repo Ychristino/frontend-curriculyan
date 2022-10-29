@@ -11,7 +11,7 @@ import { Row } from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner';
 
 //Api
-import apiCurriculo from '../../api/ApiCurriculo';
+import ProjetoService from '../../services/ProjetoService';
 
 function Projetos(){
     const [data, setData] = useState({});
@@ -19,16 +19,18 @@ function Projetos(){
     
     useEffect(()=> {
         //Backend aceita paginação... para isso apenas utilizar o formato: 'projeto?page=0&size=2&sort=titulo,asc'
-        apiCurriculo.get("projeto")
+        new ProjetoService().listarProjeto()
             .then(resposta => {
-                console.log(resposta)
-                setData(resposta.data.content);
+                setData(resposta.content);
                 setisLoading(false);
             })
     }, [isLoading]);
-
-    if(isLoading) return <Spinner animation="border" />
-    else return(
+    if (isLoading)return (
+        <>
+            <Spinner animation="grow" />
+        </>) 
+    
+    return(
         <>
             <Accordion 
                 flush

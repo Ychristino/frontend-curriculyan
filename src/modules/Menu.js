@@ -20,34 +20,30 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 function Menu(){
 
     return(
-        <Row className='mb-5'>
-            <Navbar collapseOnSelect bg="dark" variant="dark" md={11}>
-                <Container>
-                    <Navbar.Brand href="/">Yan Christino</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="/curriculo">Currículo</Nav.Link>
-                            <Nav.Link href="/projetos">Projetos</Nav.Link>
-                        </Nav>
-                        
-                        <Nav>
-                                <a href='https://github.com/Ychristino' target='_blank'>
-                                    <GitHub />/ychristino
-                                </a>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-5'>
+            <Container>
+                <Navbar.Brand href="/">Yan Christino</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="/curriculo">Currículo</Nav.Link>
+                        <Nav.Link href="/projetos">Projetos</Nav.Link>
+                    </Nav>
 
-                                <a href='https://www.linkedin.com/in/yan-christino-6b370820a/' target='_blank'>
-                                    <LinkedIn />LinkedIn
-                                </a>
-
-                                <a href='https://wa.me/5551982672790' target='_blank'>
-                                    <WhatsApp />WhatsApp
-                                </a>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
+                    <Nav>
+                        <Nav.Link href='https://github.com/Ychristino'>
+                            <GitHub />/ychristino
+                        </Nav.Link>
+                        <Nav.Link href='https://www.linkedin.com/in/yan-christino-6b370820a/'>
+                            <LinkedIn />LinkedIn
+                        </Nav.Link>
+                        <Nav.Link href='https://wa.me/5551982672790'>
+                            <WhatsApp />WhatsApp
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
         </Navbar>
-    </Row>
   )
 }
 export default Menu;

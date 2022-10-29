@@ -7,7 +7,6 @@ import React from 'react';
 
 function Atividades(props){
 
-    console.log(props.atividadesAtuais)
     
     return(
         <>

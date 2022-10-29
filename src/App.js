@@ -16,15 +16,19 @@ import Col from 'react-bootstrap/Col';
 // CSS IMPORTS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import AtualizaCurriculo from './modules/Logado/AtualizaCurriculo';
+import AtualizaAtributos from './modules/Logado/AtualizaAtributos';
+import AtualizaExperiencia from './modules/Logado/AtualizaExperiencia';
+import AtualizaFormacao from './modules/Logado/AtualizaFormacao';
 
 function App() {
   return (
     <>
       {/* Barra de navegação */}
-      <Row>
         <Menu />
-      </Row>
+
         {/* Inicio Bloco Central */}
+        
         {/* <Manutencao /> */}
 
         <Row
@@ -34,10 +38,14 @@ function App() {
         >
             {/* Inicio Conteúdo da página */}
             <Col lg={{span:8, offset: 2}} md={12}>
-            
+              <Login />
+              {/* <AtualizaAtributos /> */}
+              {/* <AtualizaCurriculo /> */}
+              {/* <AtualizaExperiencia /> */}
+              {/* <AtualizaFormacao /> */}
+              
               <BrowserRouter>
                 <Routes>
-                  
                   <Route 
                     exact
                     path='/' 
